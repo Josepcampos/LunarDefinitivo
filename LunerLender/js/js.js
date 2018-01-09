@@ -11,7 +11,7 @@ var aterrizado= false;
 var velocidad = null;
 var altura = null;
 var combustible = null;
-var dificultad = true;
+var dificultad = false;
 var salir=true;
 
 
@@ -35,22 +35,24 @@ window.onload = function(){
 		}
 	}
 
-	document.getElementById("boton").onclick = function() {
+	document.getElementById("dificultad").onclick = function() {
 		if (dificultad) {
 			dificultad = false;
-			document.getElementById("boton").innerHTML = "Facil";
+			document.getElementById("dificultad").src = "img/facil.png";
 		} else {
 			dificultad = true;
-			document.getElementById("boton").innerHTML = "Dificil";
+			document.getElementById("dificultad").src = "img/dificil.png";
 		}
 	}
     	document.getElementById("showm").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "block";
-		stop();
+		stop()
+		motorOff()
 	}
 	document.getElementById("hidem").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "none";
-		start();
+		start()
+		motorOff()
 	}
 	document.onclick = function () {
 		if (devicewidth<961){
@@ -89,25 +91,25 @@ function moverNave(){
 		document.getElementById("nave").style.top = y+"%"; 
 	} else {
 		if (dificultad) {
-			if (v<=5){
-				alert("Has aterrizado a salvo a" + v.toFixed(2) + "m/s, felicidades.");
+			if (v<=2){
+				alert("Has aterrizado a salvo, felicidades.");
 				stop();
 				aterrizado=true;
 				document.getElementById("nave1").src = "img/alien1.png";
 			} else {
-				alert("La has espichado a" + v.toFixed(2) + "m/s, mala suerte");
+				alert("La has espichado, mala suerte");
 				stop();
 				aterrizado=true;
 				document.getElementById("nave1").src = "img/alien4.png";
 			}
 		} else {
-			if (v<=2){
-				alert("Has aterrizado a salvo a" + v.toFixed(2) + "m/s, felicidades");
+			if (v<=5){
+				alert("Has aterrizado a salvo, felicidades");
 				stop();
 				aterrizado=true;
 				document.getElementById("nave1").src = "img/alien1.png";
 			} else {
-				alert("La has espichado a" + v.toFixed(2) + "m/s, mala suerte");
+				alert("La has espichado, mala suerte");
 				stop();
 				aterrizado=true;
 				document.getElementById("nave1").src = "img/alien4.png";
