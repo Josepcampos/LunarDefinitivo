@@ -1,3 +1,3 @@
 # LunarDefinitivo
 
-https://rawgit.com/Focxis/LunarDefinitivo/master/LunerLender/index.html
+https://rawgit.com/Focxis/LunarDefinitivo/master/index.html
