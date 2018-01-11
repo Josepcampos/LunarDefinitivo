@@ -37,10 +37,10 @@ window.onload = function(){
 	document.getElementById("dificultad").onclick = function() {
 		if (dificultad) {
 			dificultad = false;
-			document.getElementById("dificultad").src = "img/facil.png";
+			document.getElementById("dificultad").src = "../img/facil.png";
 		} else {
 			dificultad = true;
-			document.getElementById("dificultad").src = "img/dificil.png";
+			document.getElementById("dificultad").src = "../img/dificil.png";
 		}
 	}
     	document.getElementById("showm").onclick = function () {
